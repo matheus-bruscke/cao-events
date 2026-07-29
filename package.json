@@ -1,4 +1,6 @@
 {
+  "name": "cao",
+  "private": true,
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",
@@ -7,7 +9,7 @@
     "lint-staged": "^17.2.0",
     "prettier": "^3.9.6",
     "turbo": "^2.10.7",
-    "typescript": "^7.0.2"
+    "typescript": "5.9.2"
   },
   "devEngines": {
     "packageManager": {
@@ -28,13 +30,5 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "check-types": "turbo run check-types"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write"
-    ],
-    "*.{json,md,yml}": [
-      "prettier --write"
-    ]
   }
 }
