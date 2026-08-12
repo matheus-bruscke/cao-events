@@ -4,13 +4,16 @@
   "scripts": {
     "check-types": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "test": "bun test",
+    "test:watch": "bun test --watch"
   },
   "dependencies": {
     "elysia": "latest"
   },
   "devDependencies": {
     "@cao/config": "workspace:*",
+    "@types/bun": "^1.3.14",
     "eslint": "^10.8.0",
     "typescript": "5.9.2"
   },
