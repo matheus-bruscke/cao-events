@@ -1,6 +1,7 @@
 {
   "name": "app",
   "version": "1.0.50",
+  "type": "module",
   "scripts": {
     "check-types": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
