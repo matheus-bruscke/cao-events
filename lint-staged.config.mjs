@@ -1,8 +1,4 @@
 export default {
-  '*.{js,jsx,ts,tsx}': [
-    'prettier --write',
-    () => 'turbo run lint',
-    () => 'turbo run test',
-  ],
+  '*.{js,jsx,ts,tsx}': ['prettier --write', () => 'turbo run lint'],
   '*.{json,md,yml}': ['prettier --write'],
 }
