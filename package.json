@@ -32,8 +32,8 @@
     "check-types": "turbo run check-types",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
-    "setup": "bun install && bun run db:up",
-    "db:up": "docker compose -f apps/server/docker-compose.yml up -d",
-    "db:down": "docker compose -f apps/server/docker-compose.yml down"
+    "setup": "bun install && bun run services:up",
+    "services:up": "docker compose -f apps/server/docker-compose.yml up -d",
+    "services:down": "docker compose -f apps/server/docker-compose.yml down"
   }
 }

@@ -5,6 +5,8 @@ if (typeof process.env.DATABASE_URL !== 'string') {
   throw new Error('Invalid Database URL')
 }
 
-const db = drizzle(process.env.DATABASE_URL)
+const db = drizzle({
+  connection: process.env.DATABASE_URL,
+})
 
 export { db }
