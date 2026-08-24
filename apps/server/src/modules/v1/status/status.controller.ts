@@ -6,10 +6,10 @@ import { sql } from 'drizzle-orm'
 const statusController: InlineHandler<
   UnwrapRoute<typeof statusModel>
 > = async ({ status }) => {
-  const databaseName = process.env.POSTGRES_DB
+  const databaseName = process.env.PGUSER
 
   if (typeof databaseName !== 'string') {
-    throw new Error('Invalid POSTGRES_DB')
+    throw new Error('Invalid PGUSER')
   }
 
   const dbVersion = (await db.execute(sql`SHOW server_version;`)).rows[0]
