@@ -13,8 +13,10 @@ describe('GET /api/v1/status', () => {
 
     const parsedUpdatedAt = new Date(body.updated_at).toISOString()
 
+    console.log('env', process.env.NODE_ENV)
+
     const expectedMaxConnections =
-      Bun.env.NODE_ENV === 'development' ? 100 : 901
+      process.env.NODE_ENV !== 'production' ? 100 : 901
 
     expect(body.updated_at).toEqual(parsedUpdatedAt)
     expect(body.dependencies.database.max_connections).toEqual(

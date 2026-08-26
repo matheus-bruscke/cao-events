@@ -6,7 +6,7 @@ import { sql } from 'drizzle-orm'
 const statusController: InlineHandler<
   UnwrapRoute<typeof statusModel>
 > = async ({ status }) => {
-  const databaseName = process.env.PGUSER
+  const databaseName = process.env.PGDATABASE
 
   if (typeof databaseName !== 'string') {
     throw new Error('Invalid PGUSER')
