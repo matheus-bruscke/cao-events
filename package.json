@@ -31,7 +31,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "check-types": "turbo run check-types",
-    "test": "concurrently -n dev,test -k -s command-test --hide dev 'bun run dev' 'turbo run test'",
+    "test": "concurrently -n dev,test -k -s command-test --hide dev \"bun run dev\" \"turbo run test\"",
     "test:watch": "concurrently 'bun run dev' 'turbo run test:watch'",
     "setup:dev": "bun install && bun run services:up && bun run services:check && bun run migrations:migrate",
     "migrations:migrate": "cd apps/server && bunx drizzle-kit migrate",
