@@ -1,7 +1,12 @@
 import { WebServer } from '@/infra/web-server.js'
-import { describe, expect, it } from 'bun:test'
+import orchestrator from '@/tests/orchestrator.js'
+import { beforeAll, describe, expect, it } from 'bun:test'
 
 const webServer = new WebServer()
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServices()
+})
 
 describe('GET /api/v1/status', () => {
   it('Should retrieve current system status', async () => {
