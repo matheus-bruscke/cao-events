@@ -1,5 +1,12 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
+  "globalPassThroughEnv": [
+    "NODE_ENV",
+    "DATABASE_URL",
+    "PGUSER",
+    "PGPASSWORD",
+    "PGDATABASE"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

@@ -14,10 +14,18 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version-file: package.json
 
       - name: Install dependencies
         run: bun install --fronzen-lockfile
 
       - name: Run Tests
-        run: bun run test
+        env:
+          PGUSER: ci
+          PGPASSWORD: ci
+          PGDATABASE: cao_test
+          DATABASE_URL: postgres://ci:ci@localhost:5432/cao_test
+          NODE_ENV: test
+        run: |
+          docker compose -f apps/server/docker-compose.yml down -v || true
+          bun run test
