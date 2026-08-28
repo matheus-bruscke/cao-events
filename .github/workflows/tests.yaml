@@ -1,10 +1,10 @@
-name: Automated tests
+name: Tests
 
 on: pull_request
 
 jobs:
   test:
-    name: Bun test Ubuntu
+    name: Bun Test Ubuntu
     runs-on: ubuntu-latest
 
     steps:

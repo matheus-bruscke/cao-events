@@ -31,6 +31,7 @@
     "dev": "bun run setup:dev && turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
     "check-types": "turbo run check-types",
     "test": "bun run setup:dev && concurrently -n dev,test -k -s command-test \"cd apps/server && bun run src/index.ts\" \"turbo run test\"",
     "test:watch": "concurrently 'bun run dev' 'turbo run test:watch'",
